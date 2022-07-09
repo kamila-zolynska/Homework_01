@@ -2,16 +2,20 @@ package pl.coderslab.beans;
 
 import lombok.Getter;
 import lombok.ToString;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @ToString
+@Repository
 public class MemoryCustomerRepository implements CustomerRepository {
     private List<Customer> customers = new ArrayList<>();
     private final CustomerLogger customerLogger;
 
+    @Autowired
     public MemoryCustomerRepository(CustomerLogger customerLogger) {
         this.customerLogger = customerLogger;
     }
