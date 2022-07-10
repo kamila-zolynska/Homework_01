@@ -13,10 +13,10 @@ import java.util.List;
 @Repository
 public class MemoryCustomerRepository implements CustomerRepository {
     private List<Customer> customers = new ArrayList<>();
-    private final CustomerLogger customerLogger;
+    private final SimpleCustomerLogger customerLogger;
 
     @Autowired
-    public MemoryCustomerRepository(CustomerLogger customerLogger) {
+    public MemoryCustomerRepository(SimpleCustomerLogger customerLogger) {
         this.customerLogger = customerLogger;
     }
 
